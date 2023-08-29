@@ -80,7 +80,6 @@ enum SyberiaRPC {
 	SYBRPC_SKILLS_ACTIVATE,
 	SYBRPC_STETHOSCOPE_INSPECT,
 	SYBRPC_CURRENT_ZONE_SYNC,
-	SYBRPC_SYNC_TOXIC_ZONES,
 	SYBRPC_OPEN_TRADE_MENU,
 	SYBRPC_CLOSE_TRADER_MENU,
 	SYBRPC_ACTION_TRADER,
@@ -305,11 +304,7 @@ modded class PlayerConstants
 	
 	
 	// Metabolic
-	static const float SL_ENERGY_CRITICAL = 0;
-	static const float SL_ENERGY_LOW = 1000;
-	static const float SL_ENERGY_NORMAL = 2000;
-	static const float SL_ENERGY_HIGH = 2800;
-	static const float LOW_ENERGY_THRESHOLD = 0.01;
+	static const float LOW_ENERGY_THRESHOLD = 0.01;  //Threshold for health loss
 	
 	static const float METABOLIC_SPEED_ENERGY_BASAL		= 0.01;		//energy loss per second while idle	
 	static const float METABOLIC_SPEED_ENERGY_WALK		= 0.02;		//energy loss per second
@@ -317,12 +312,8 @@ modded class PlayerConstants
 	static const float METABOLIC_SPEED_ENERGY_SPRINT	= 0.20;		//energy loss per second
 	
 	// Water
-	static const float SL_WATER_CRITICAL = 0;
-	static const float SL_WATER_LOW = 500;
-	static const float SL_WATER_NORMAL = 1000;
-	static const float SL_WATER_HIGH = 1300;
-	static const float LOW_WATER_THRESHOLD = 0.01;
-
+	static const float LOW_WATER_THRESHOLD = 0.01;	//Threshold for health loss
+	
 	static const float METABOLIC_SPEED_WATER_BASAL		= 0.01;		//water loss per second while idle	
 	static const float METABOLIC_SPEED_WATER_WALK		= 0.03;		//water loss per second
 	static const float METABOLIC_SPEED_WATER_JOG		= 0.15;		//water loss per second
@@ -379,11 +370,11 @@ modded class GameConstants
 	const float STAMINA_SYNC_RATE = 1; //in secs
 	const float STAMINA_MAX = 100;
 	
-	const float TEMPERATURE_RATE_COOLING_INSIDE = -0.18;
-	const float TEMPERATURE_RATE_COOLING_GROUND = -0.20;
+	const float TEMPERATURE_RATE_COOLING_INSIDE = -0.15;
+	const float TEMPERATURE_RATE_COOLING_GROUND = -0.25;
 	const float TEMPERATURE_RATE_COOLING_PLAYER = 0; // disabled for correct calculation
 	const float ENVIRO_ITEM_HEAT_TRANSFER_COEF = 0.025;
-	const float TEMPERATURE_ITEM_HEAT_TRANSFER_COEF = 0.05;
+	const float TEMPERATURE_ITEM_HEAT_TRANSFER_COEF = 0.18;
 	const float TEMPERATURE_ITEMS_HEAT_IN_INVENTORY_FROM_BODY = 26;
 	const float ENVIRO_FIRE_INCREMENT = 0.001;	
 	const float ENVIRO_DRY_INCREMENT = 0.000005;

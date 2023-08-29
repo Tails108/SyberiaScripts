@@ -68,6 +68,7 @@ modded class IngameHud
 		
 		super.DisplayBadge(key, value);
 		
+		int whiteColor = ARGB( 255, 220, 220, 220 );
 		int yellowColor = ARGB( 255, 220, 220, 0 );
 		int redColor = ARGB( 255, 220, 0, 0 );
 		int badgetColor = ARGB( 255, 220, 220, 220 );
@@ -75,13 +76,13 @@ modded class IngameHud
 		{
 			badgetColor = yellowColor;
 		}
-		else if (key == NTFKEY_BLEEDISH || key == NTFKEY_BULLETHIT || key == NTFKEY_KNIFEHIT || key == NTFKEY_VISCERADMG || key == NTFKEY_SEPSIS || key == NTFKEY_ZVIRUS)
+		else if (key == NTFKEY_BULLETHIT || key == NTFKEY_KNIFEHIT || key == NTFKEY_VISCERADMG || key == NTFKEY_SICK)
 		{
 			badgetColor = redColor;
 		}
-		else if (key == NTFKEY_HEMATOMA)
+		else if (key == NTFKEY_SEPSIS || key == NTFKEY_ZVIRUS)
 		{
-			if (value > 4)
+			if (value > 1)
 			{
 				badgetColor = redColor;
 			}
@@ -90,9 +91,54 @@ modded class IngameHud
 				badgetColor = yellowColor;
 			}
 		}
-		else if (key == NTFKEY_PAIN || key == NTFKEY_OVERDOSED || key == NTFKEY_INFLUENZA)
+		else if (key == NTFKEY_HEMATOMA)
+		{
+			if (value >= 5)
+			{
+				badgetColor = redColor;
+			}
+			else if (value >= 3)
+			{
+				badgetColor = yellowColor;
+			}
+			else
+			{
+				badgetColor = whiteColor;
+			}
+		}
+		else if (key == NTFKEY_BLEEDISH)
+		{
+			if (value >= 4)
+			{
+				badgetColor = redColor;
+			}
+			else if (value >= 2)
+			{
+				badgetColor = yellowColor;
+			}
+			else
+			{
+				badgetColor = whiteColor;
+			}
+		}
+		else if (key == NTFKEY_OVERDOSED || key == NTFKEY_INFLUENZA)
 		{
 			if (value == 3)
+			{
+				badgetColor = redColor;
+			}
+			else if (value == 2)
+			{
+				badgetColor = yellowColor;
+			}
+			else
+			{
+				badgetColor = whiteColor;
+			}
+		}
+		else if (key == NTFKEY_PAIN)
+		{
+			if (value >= 2)
 			{
 				badgetColor = redColor;
 			}
@@ -112,7 +158,6 @@ modded class IngameHud
 				badgetColor = yellowColor;
 			}
 		}
-		
 		
 		string badge_name = m_BadgesWidgetNames.Get( key );
 		ImageWidget w_image = ImageWidget.Cast( m_Badges.FindAnyWidget( badge_name ) );
@@ -153,4 +198,5 @@ modded class IngameHud
 			w_count.SetText( badgeText );
 		}
 	}
+
 }
