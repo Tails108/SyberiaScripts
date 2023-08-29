@@ -28,7 +28,6 @@ class BaseBuildingBase;
 class House;
 class HouseNoDestruct;
 class Transmitter_Base;
-class EffectArea;
 
 // Characters
 class SurvivorM_Mirek;

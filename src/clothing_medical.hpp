@@ -7,7 +7,7 @@ class Stethoscope: Clothing
     vehicleClass="Clothing";
     simulation="clothing";
     medicalItem=1;
-    inventorySlot[]=
+    inventoryslot[]+=
     {
         "Eyewear"
     };

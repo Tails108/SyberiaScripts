@@ -63,7 +63,7 @@ class BandageHemostatic: BandageDressing
     displayName="#syb_hemostatic_bandage_name";
     descriptionShort="#syb_hemostatic_bandage_desc";
     model="SyberiaScripts\data\medical\hemostatic_bandage.p3d";
-    inventorySlot[]=
+    inventoryslot[]+=
     {
         "MedicalBandage"
     };

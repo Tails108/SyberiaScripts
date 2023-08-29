@@ -1,7 +1,7 @@
 class CfgPatches {
 	class SyberiaScripts {
         units[] = {};
-		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Gear_Medical", "DZ_Gear_Consumables"};
+		requiredAddons[] = {"DZ_Data","DZ_Scripts","DZ_Gear_Medical","DZ_Gear_Tools", "DZ_Gear_Consumables","DZ_Gear_Crafting"};
 	};
 };
 
@@ -52,9 +52,6 @@ class CfgVehicles
     #include "clothing_helmets.hpp"
     #include "clothing_medical.hpp"
     #include "clothing_nbc.hpp"
-    #include "building_items.hpp"
-    #include "building_livespaces.hpp"
-    #include "trading_objects.hpp"
     #include "debug_items.hpp"
     #include "vehicle_parts_redef.hpp"
     #include "containers.hpp"
@@ -98,7 +95,19 @@ class CfgBuildingInfo
 
 class CfgBuildingResources
 {
-    #include "building_resources.hpp"
+    class Doors
+	{
+		class Default
+		{
+			class Level1
+			{
+				consumablesClass[]={"WoodenPlank", "Nail"};
+				consumablesQuantity[]={5, 12};
+				toolsClass[]={"Hammer"};
+				toolsDammage[]={0.1};
+			};
+		};
+	};
 };
 
 #include "map_settings.hpp"

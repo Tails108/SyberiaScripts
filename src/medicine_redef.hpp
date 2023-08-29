@@ -35,7 +35,7 @@ class Morphine: Inventory_Base
 
 class CharcoalTablets: Edible_Base
 {
-    scope=0;
+	medicalItem=1;
 };
 
 class TetracyclineAntibiotics: Edible_Base
@@ -45,7 +45,10 @@ class TetracyclineAntibiotics: Edible_Base
 
 class AntiChemInjector: Inventory_Base
 {
-    scope=0;
+	medicalItem=1; 
+    medStomatchhealLevel=2;
+    medStomatchhealTimeSec=300;
+    overdosedIncrement=0.8;
 };
 
 class BandageDressing: Inventory_Base

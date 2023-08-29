@@ -156,7 +156,7 @@ FrameWidgetClass rootFrame {
        vexactpos 1
        hexactsize 1
        vexactsize 1
-       text "Join us in Discord"
+       text "Join The Washed Up Discord"
        font "gui/fonts/metronbook22"
        "exact text" 1
        "size to text h" 0

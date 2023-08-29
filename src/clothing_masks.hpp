@@ -7,3 +7,8 @@ class GasMask_Filter: Inventory_Base
 {
     radiationProtection = 0.29;
 };
+
+class GasMask_Filter_Improvised: Inventory_Base
+{
+    radiationProtection = 0.28;
+};

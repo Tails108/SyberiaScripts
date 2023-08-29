@@ -1,4 +1,5 @@
-class PlateCarrierVest: Clothing {
+class PlateCarrierVest: Clothing 
+{
     bulletProofProtection = 0.4;
 };
 
